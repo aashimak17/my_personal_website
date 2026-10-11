@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aashima Kapil — Instructional Design, Learning Experience Design, and thoughtful technology-enabled learning.">
+<title>Aashima Kapil — Learning, Designed.</title>
+<style>
+:root{--ink:#171717;--paper:#f8f6f2;--muted:#77736d;--line:#d9d4cc;--accent:#a5232d;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.topline{height:7px;background:var(--accent)}
+header{border-bottom:1px solid var(--line);background:rgba(248,246,242,.94)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wordmark{font-family:Georgia,'Times New Roman',serif;font-size:23px;letter-spacing:.16em;font-weight:700}
+.wordmark small{display:block;font:9px Arial,sans-serif;letter-spacing:.32em;text-align:center;margin-top:2px}
+nav{display:flex;gap:27px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+nav a:hover,.text-link:hover{color:var(--accent)}
+.hero{padding:92px 0 84px;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,7vw,88px);font-weight:400;line-height:.99;letter-spacing:-.045em;margin:24px 0}
+h1 em{font-weight:400;color:var(--accent)}
+.lede{font-family:Georgia,'Times New Roman',serif;font-size:21px;line-height:1.5;max-width:580px;color:#46423d}
+.hero-copy{font-size:14px;color:#5f5a54;max-width:520px;margin:24px 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border:1px solid var(--ink);font-size:10px;letter-spacing:.14em;text-transform:uppercase;transition:.2s}
+.btn.primary{background:var(--ink);color:white}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:white}
+.hero-art{min-height:430px;position:relative;display:grid;place-items:center}
+.frame{width:82%;height:390px;border:1px solid #c9c0b4;position:relative;display:grid;place-items:center;background:linear-gradient(145deg,#e8e1d8,#f4f0e9 55%,#d7cec2);overflow:hidden}
+.frame:before,.frame:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.7);inset:18px}
+.frame:after{inset:30px;border-color:rgba(165,35,45,.23)}
+.monogram{font-family:Georgia,serif;font-size:clamp(95px,14vw,180px);font-weight:400;letter-spacing:-.15em;color:#24211f;z-index:1;transform:translateX(-.06em)}
+.stamp{position:absolute;right:0;bottom:30px;background:var(--accent);color:white;padding:17px 20px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
+.side-note{position:absolute;left:0;top:22px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.section{padding:76px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:35px}
+.section h2{font-family:Georgia,serif;font-size:clamp(34px,4.4vw,52px);font-weight:400;letter-spacing:-.035em;line-height:1.08;margin:12px 0 0}
+.section-intro{max-width:400px;color:var(--muted);font-size:13px;margin:0}
+.about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
+.big-number{font-family:Georgia,serif;font-size:80px;line-height:1;color:var(--accent)}
+.number-label{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);max-width:170px}
+.about-text{font-family:Georgia,serif;font-size:21px;line-height:1.65}
+.about-text p:last-child{margin-bottom:0}
+.values{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:42px}
+.value{padding:24px;border-right:1px solid var(--line)}
+.value:last-child{border-right:0}
+.value .num{font-size:10px;color:var(--accent);letter-spacing:.15em}
+.value h3{font-family:Georgia,serif;font-size:22px;font-weight:400;margin:12px 0 8px}
+.value p{font-size:12px;color:var(--muted);margin:0}
+.experience{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.job{padding:25px 0;border-top:1px solid var(--line)}
+.job-top{display:flex;justify-content:space-between;gap:18px;align-items:start}
+.job h3{font-family:Georgia,serif;font-weight:400;font-size:24px;margin:0 0 4px}
+.company{font-size:12px;color:var(--muted)}
+.date{font-size:10px;letter-spacing:.08em;color:var(--accent);text-align:right;white-space:nowrap}
+.job p{font-size:13px;color:#5f5a54;margin:15px 0 0}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.pill{border:1px solid var(--line);padding:9px 13px;font-size:10px;letter-spacing:.07em}
+.education-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.edu{padding:24px;border:1px solid var(--line);min-height:160px}
+.edu .year{font-size:10px;color:var(--accent);letter-spacing:.13em}
+.edu h3{font-family:Georgia,serif;font-size:21px;font-weight:400;line-height:1.25;margin:16px 0 8px}
+.edu p{font-size:12px;color:var(--muted);margin:0}
+.contact{background:#191817;color:#f8f6f2;padding:78px 0}
+.contact .eyebrow{color:#d9898d}
+.contact h2{font-family:Georgia,serif;font-size:clamp(40px,6vw,72px);font-weight:400;line-height:1.05;max-width:750px;margin:18px 0 24px}
+.contact p{color:#c4beb6;font-size:14px;max-width:520px}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.contact .btn{border-color:#6e6963}
+.contact .btn.primary{background:var(--accent);border-color:var(--accent)}
+footer{padding:22px 0;background:#191817;color:#99928a;border-top:1px solid #393633;font-size:10px;letter-spacing:.08em}
+.footer-row{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:760px){.wrap{width:min(100% - 32px,600px)}.nav{padding:18px 0;align-items:flex-start;flex-direction:column}.nav nav{gap:15px;flex-wrap:wrap}.hero{padding:60px 0 52px;grid-template-columns:1fr;gap:30px}.hero-art{min-height:330px}.frame{height:300px;width:80%}.side-note{left:5px}.stamp{bottom:12px}.section{padding:56px 0}.section-head{display:block}.section-intro{margin-top:16px}.about-grid{grid-template-columns:1fr;gap:28px}.big-number{font-size:65px}.values{grid-template-columns:1fr}.value{border-right:0;border-bottom:1px solid var(--line)}.value:last-child{border-bottom:0}.experience{grid-template-columns:1fr}.education-grid{grid-template-columns:1fr}.edu{min-height:auto}.footer-row{flex-direction:column;gap:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="#home" aria-label="Aashima Kapil home">AK<small>AASHIMA KAPIL</small></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="home">
+  <section class="wrap hero">
+    <div>
+      <div class="eyebrow">Instructional Design · Learning Experience</div>
+      <h1>Learning,<br><em>beautifully</em><br>designed.</h1>
+      <p class="lede">I turn complex ideas into clear, thoughtful learning experiences that help people do their best work.</p>
+      <p class="hero-copy">I’m Aashima Kapil, an instructional designer with a background spanning learning and development, financial services, and digital learning. I bring structure, empathy, and a keen eye for detail to every learning experience.</p>
+      <div class="actions">
+        <a class="btn primary" href="#experience">Explore my work</a>
+        <a class="btn" href="#contact">Get in touch ↗</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Minimalist AK monogram artwork">
+      <div class="side-note">Clarity · Craft · Curiosity</div>
+      <div class="frame"><div class="monogram">AK</div></div>
+      <div class="stamp">Learning with intention</div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / The perspective</div><h2>Where strategy meets<br>human learning.</h2></div>
+        <p class="section-intro">A cross-disciplinary perspective shaped by years of turning information into action.</p>
+      </div>
+      <div class="about-grid">
+        <div><div class="big-number">9+</div><div class="number-label">Years across finance, learning & professional services</div></div>
+        <div class="about-text">
+          <p>My career brings together two complementary worlds: the analytical discipline of financial services and the human-centered craft of instructional design.</p>
+          <p>From defining measurable learning objectives and storyboarding video lessons to building eLearning and supporting subject-matter experts, I care about making learning useful, accessible, and engaging.</p>
+        </div>
+      </div>
+      <div class="values">
+        <article class="value"><span class="num">01 — STRUCTURE</span><h3>Clear by design</h3><p>Learning objectives, thoughtful information architecture, and a process grounded in ADDIE.</p></article>
+        <article class="value"><span class="num">02 — EXPERIENCE</span><h3>Made for people</h3><p>Self-service videos, interactive eLearning, tutorials, and blended learning experiences.</p></article>
+        <article class="value"><span class="num">03 — COLLABORATION</span><h3>Better together</h3><p>Partnering with SMEs, editors, voice-over artists, and cross-functional teams.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="expertise">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Selected expertise</div><h2>The details matter.</h2></div>
+        <p class="section-intro">A practical toolkit for creating polished, accessible, and effective learning.</p>
+      </div>
+      <div class="pills">
+        <span class="pill">Instructional Design</span><span class="pill">Learning Experience Design</span><span class="pill">ADDIE Methodology</span><span class="pill">eLearning Development</span><span class="pill">Storyline</span><span class="pill">Adobe Captivate</span><span class="pill">Rise</span><span class="pill">Vyond</span><span class="pill">Video-based Learning</span><span class="pill">Microlearning</span><span class="pill">Software Simulations</span><span class="pill">Learning Objectives</span><span class="pill">LMS & Reporting</span><span class="pill">Accessibility & Compliance</span><span class="pill">Financial Planning</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">03 / Professional journey</div><h2>Experience with purpose.</h2></div>
+        <p class="section-intro">A career built around helping people navigate complexity, build capability, and grow confidence.</p>
+      </div>
+      <div class="experience">
+        <article class="job"><div class="job-top"><div><h3>Instructional Designer</h3><div class="company">Workato</div></div><div class="date">2021 — PRESENT</div></div><p>Define measurable learning objectives; storyboard lessons and develop scripts for video-based self-service training; coordinate with video editors and voice-over artists; create videos, interactive eLearning, tutorials, and documentation for technical and non-technical audiences.</p></article>
+        <article class="job"><div class="job-top"><div><h3>Learning & Development Specialist</h3><div class="company">Freelance · Pharma client</div></div><div class="date">2020 — 2021</div></div><p>Designed Vyond videos and interactive learning in Storyline and Rise, with attention to AODA accessibility standards.</p></article>
+        <article class="job"><div class="job-top"><div><h3>Financial Advisor</h3><div class="company">TD</div></div><div class="date">2018 — 2021</div></div><p>Delivered personalized financial advice and supported reporting, documentation, service-level agreements, and productivity goals.</p></article>
+        <article class="job"><div class="job-top"><div><h3>Team Lead</h3><div class="company">Ameriprise Financial</div></div><div class="date">2013 — 2018</div></div><p>Led learning initiatives, partnered with stakeholders, applied ADDIE, supported a learning culture, and developed eLearning, microlearning, software simulations, and training curricula.</p></article>
+        <article class="job"><div class="job-top"><div><h3>Senior Associate</h3><div class="company">Ameriprise Financial</div></div><div class="date">2011 — 2013</div></div><p>Created financial-plan deliverables, analyzed cash flow and net worth, supported portfolio allocation, and developed user guides and knowledge-sharing sessions. Recognized for managing close to 700 financial plans across 20+ advisor practices.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / Education & credentials</div><h2>A foundation in business<br>and technology.</h2></div>
+      </div>
+      <div class="education-grid">
+        <article class="edu"><div class="year">2014 — 2016</div><h3>Master of Business Administration</h3><p>Bharati Vidyapeeth · Finance and Financial Management Services</p></article>
+        <article class="edu"><div class="year">2010 — 2011</div><h3>Post Graduate Diploma</h3><p>International College of Financial Planning · Financial Planning and Services</p></article>
+        <article class="edu"><div class="year">2007 — 2010</div><h3>Bachelor of Computer Applications</h3><p>Bharati Vidyapeeth · Computer Software and Media Applications</p></article>
+      </div>
+      <div class="pills"><span class="pill">Investment Funds in Canada</span><span class="pill">CRPC</span><span class="pill">English</span><span class="pill">Hindi</span><span class="pill">German</span><span class="pill">Punjabi</span></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow">05 / Start a conversation</div>
+      <h2>Good learning makes a lasting impression.</h2>
+      <p>Interested in learning design, thoughtful collaboration, or creating a clearer experience for your audience? I’d love to connect.</p>
+      <div class="contact-links">
+        <a class="btn primary" href="mailto:aashima_kapil@yahoo.com">Email Aashima ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/aashima-kapil-14586a68/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year">2026</span> AASHIMA KAPIL</span><span>THOUGHTFUL LEARNING. INTENTIONAL DESIGN.</span></div></footer>
+</body>
+</html>
